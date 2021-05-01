@@ -36,7 +36,7 @@
       "projectType": "application",
       "root": "apps/koffee-beans",
       "sourceRoot": "apps/koffee-beans/src",
-      "prefix": "koffee-beans",
+      "prefix": "kb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
