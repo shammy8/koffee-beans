@@ -1,7 +1,6 @@
 import { Spending } from '@koffee-beans/api-interfaces';
 import { Injectable } from '@nestjs/common';
-import { CreateSpendingDto } from './dto/create-spending.dto';
-import { UpdateSpendingDto } from './dto/update-spending.dto';
+import { CreateSpendingDto, UpdateSpendingDto } from './spending.dto';
 
 @Injectable()
 export class SpendingsService {
