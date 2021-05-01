@@ -1,8 +1,11 @@
-<div style="text-align: center">
-  <h1>Welcome to koffee-beans!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-  />
-</div>
-<pre>Message: {{ hello$ | async | json }}</pre>
+<tui-root
+  ><div style="text-align: center">
+    <h1>Welcome to koffee-beans!</h1>
+    <img
+      width="450"
+      src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
+    />
+  </div>
+  <button tuiButton type="button" icon="tuiIconSearch">Click Me</button>
+  <pre>Message: {{ hello$ | async | json }}</pre>
+</tui-root>
