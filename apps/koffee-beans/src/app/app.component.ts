@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@koffee-beans/api-interfaces';
+import { Spending } from '@koffee-beans/api-interfaces';
 
 @Component({
   selector: 'koffee-beans-root',
@@ -8,6 +8,6 @@ import { Message } from '@koffee-beans/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  hello$ = this.http.get<Spending[]>('/api/spendings');
   constructor(private http: HttpClient) {}
 }
