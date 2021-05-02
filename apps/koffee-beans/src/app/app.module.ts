@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { TuiRootModule, TuiButtonModule } from '@taiga-ui/core';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { SpendingsModule } from './spendings/spendings.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     TuiRootModule,
     TuiButtonModule,
