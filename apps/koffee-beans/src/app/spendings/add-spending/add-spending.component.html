@@ -1,10 +1,22 @@
 <form [formGroup]="form" (ngSubmit)="addSpending()">
   <tui-input-date formControlName="date">Date</tui-input-date>
+  <tui-input formControlName="description">Description</tui-input>
+  <tui-select formControlName="category" [valueContent]="categoryContent">
+    Category
+    <tui-data-list-wrapper
+      *tuiDataList
+      [items]="categories"
+      [itemContent]="categoryContent"
+    ></tui-data-list-wrapper>
+    <ng-template #categoryContent let-category>
+      <span> {{ category.id }} {{ category.label }} </span>
+    </ng-template>
+  </tui-select>
   <tui-input-number formControlName="cost" [precision]="2" decimal="always">
     Cost
   </tui-input-number>
   <tui-text-area formControlName="notes" rows="5">Notes</tui-text-area>
-  <button tuiButton type="submit">Submit</button>
+  <button tuiButton type="submit" [disabled]="!form.valid">Submit</button>
 </form>
 <pre>
   {{ form.value | json }}

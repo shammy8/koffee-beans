@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  TuiDataListWrapperModule,
   TuiInputDateModule,
   TuiInputModule,
   TuiInputNumberModule,
+  TuiSelectModule,
   TuiTextAreaModule,
 } from '@taiga-ui/kit';
-import { TuiButtonModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiDataListModule } from '@taiga-ui/core';
 
 const tuiModules = [
   TuiInputNumberModule,
@@ -14,6 +16,9 @@ const tuiModules = [
   TuiInputModule,
   TuiInputDateModule,
   TuiButtonModule,
+  TuiSelectModule,
+  TuiDataListModule,
+  TuiDataListWrapperModule,
 ];
 
 @NgModule({

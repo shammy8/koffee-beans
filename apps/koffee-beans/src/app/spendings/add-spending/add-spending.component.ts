@@ -9,9 +9,16 @@ import { TuiDay } from '@taiga-ui/cdk';
   styleUrls: ['./add-spending.component.scss'],
 })
 export class AddSpendingComponent implements OnInit {
+  categories = [
+    { id: 'eatOut', label: 'Eat Out' },
+    { id: 'groceries', label: 'Groceries' },
+  ];
+
   form = this.fb.group({
     date: [TuiDay.currentLocal(), [Validators.required]],
-    cost: [0, [Validators.required]],
+    description: ['', [Validators.required, Validators.maxLength(30)]],
+    category: ['', [Validators.required]],
+    cost: [0, [Validators.required, Validators.min(0)]],
     notes: ['', Validators.maxLength(100)],
   });
 
@@ -22,6 +29,8 @@ export class AddSpendingComponent implements OnInit {
   ngOnInit(): void {}
 
   addSpending() {
-    this.submitNewSpending.emit(this.form.value);
+    if (this.form.valid) {
+      this.submitNewSpending.emit(this.form.value);
+    }
   }
 }
