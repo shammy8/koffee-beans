@@ -7,9 +7,11 @@ import { Spending } from '@koffee-beans/api-interfaces';
   styleUrls: ['./spendings.component.scss'],
 })
 export class SpendingsComponent implements OnInit {
-  constructor() {}
+  // constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    return;
+  }
 
   submitNewSpending(spending: Spending) {
     console.log('submit new spending', spending);

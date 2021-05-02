@@ -9,14 +9,16 @@ export class SpendingsService {
       id: 'asdasdas',
       cost: 10.0,
       category: 'grocery',
-      shop: 'Tesco',
+      description: 'Tesco',
+      account: 'RBS',
       notes: '',
     },
     {
       id: 'ahdasdasdjasn',
       cost: 45.25,
       category: 'eat out',
-      shop: 'Manchurian',
+      description: 'Manchurian',
+      account: 'RBS',
       notes: '',
     },
   ];

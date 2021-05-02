@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Spending } from '@koffee-beans/api-interfaces';
 
 @Component({
-  selector: 'koffee-beans-root',
+  selector: 'kb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

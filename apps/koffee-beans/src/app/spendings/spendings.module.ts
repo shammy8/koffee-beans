@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SpendingsComponent } from './spendings.component';
 import { AddSpendingComponent } from './add-spending/add-spending.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TuiSharedModule } from '../../../../../libs/tui/src/lib/tui.module';
+import { TuiSharedModule } from '@koffee-beans/tui';
 
 @NgModule({
   declarations: [SpendingsComponent, AddSpendingComponent],

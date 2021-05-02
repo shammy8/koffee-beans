@@ -224,7 +224,7 @@
       "projectType": "library",
       "root": "libs/tui",
       "sourceRoot": "libs/tui/src",
-      "prefix": "koffee-beans",
+      "prefix": "kb",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
