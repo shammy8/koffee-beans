@@ -14,9 +14,14 @@ export class AddSpendingComponent implements OnInit {
     cost: [0, [Validators.required]],
     notes: ['', Validators.maxLength(100)],
   });
+
   @Output() submitNewSpending = new EventEmitter<Spending>();
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
+
+  addSpending() {
+    this.submitNewSpending.emit(this.form.value);
+  }
 }

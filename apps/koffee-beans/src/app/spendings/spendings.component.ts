@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Spending } from '@koffee-beans/api-interfaces';
 
 @Component({
   selector: 'kb-spendings',
@@ -9,4 +10,8 @@ export class SpendingsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  submitNewSpending(spending: Spending) {
+    console.log('submit new spending', spending);
+  }
 }

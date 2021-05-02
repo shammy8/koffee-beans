@@ -9,6 +9,7 @@ import {
   TuiInputNumberModule,
   TuiTextAreaModule,
 } from '@taiga-ui/kit';
+import { TuiButtonModule } from '@taiga-ui/core';
 
 @NgModule({
   declarations: [SpendingsComponent, AddSpendingComponent],
@@ -19,6 +20,7 @@ import {
     TuiTextAreaModule,
     TuiInputModule,
     TuiInputDateModule,
+    TuiButtonModule,
   ],
   exports: [SpendingsComponent],
 })
