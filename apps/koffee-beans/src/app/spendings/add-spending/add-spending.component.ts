@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Spending } from '@koffee-beans/api-interfaces';
 import { TuiDay } from '@taiga-ui/cdk';
+import { TuiDecimal } from '@taiga-ui/core';
 
 @Component({
   selector: 'kb-add-spending',
@@ -13,6 +14,7 @@ export class AddSpendingComponent implements OnInit {
     { id: 'eatOut', label: 'Eat Out' },
     { id: 'groceries', label: 'Groceries' },
   ];
+  always = TuiDecimal.Always;
 
   form = this.fb.group({
     date: [TuiDay.currentLocal(), [Validators.required]],
