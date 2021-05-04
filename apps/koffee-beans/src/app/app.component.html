@@ -1,4 +1,22 @@
 <tui-root>
   <kb-spendings></kb-spendings>
-  <pre>Message: {{ hello$ | async | json }}</pre>
+  <!-- <button
+    tuiButton
+    ngxPlaidLink
+    [disabled]="!linkToken"
+    env="sandbox"
+    [token]="linkToken"
+    [publicKey]="linkToken"
+    [countryCodes]="['GB']"
+    (Success)="onPlaidSuccess($event)"
+    (Exit)="onPlaidExit($event)"
+    (Load)="onPlaidLoad($event)"
+    (Event)="onPlaidEvent($event)"
+    (Click)="onPlaidClick($event)"
+  >
+    Link your Bank Account
+  </button> -->
+  <button tuiButton (click)="click()">Link your Bank</button>
+  {{ linkToken }}
+  <!-- <pre>link token: {{ linkToken$ | async | json }}</pre> -->
 </tui-root>
