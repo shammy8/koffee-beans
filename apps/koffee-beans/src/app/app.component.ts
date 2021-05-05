@@ -16,22 +16,20 @@ declare let Plaid: any; // TODO is this the best way
 })
 export class AppComponent implements OnInit, OnDestroy {
   linkTokenSub!: Subscription;
-  linkToken = 'link-sandbox-09c23174-2141-4277-8c34-28a388ea93ee';
+  linkToken = '';
   getAccessTokenSub!: Subscription;
   // hello$ = this.http.post('plaid/create-link-token', {});
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    // this.linkTokenSub = this.http
-    //   .post<any>('api/plaid/create_link_token', {}) // TODO make interface
-    //   .subscribe((res) => {
-    //     this.linkToken = res.linkToken;
-    //   });
-    return;
+    this.linkTokenSub = this.http
+      .post<any>('api/plaid/create_link_token', {}) // TODO make interface
+      .subscribe((res) => {
+        this.linkToken = res.linkToken;
+      });
+    // return;
   }
-
-  // access-sandbox-bb9336c2-1563-43b2-b389-b04f3ce54c46
 
   onPlaidSuccess(
     /* res: PlaidOnSuccessArgs */ publicToken: string,
