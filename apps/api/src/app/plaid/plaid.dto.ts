@@ -1,9 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PlaidOnSuccessArgs, PlaidSuccessMetadata } from 'ngx-plaid-link';
 import { TokenResponse } from 'plaid';
+// import { MaxLength } from 'class-validator';
 
 export class getAccessTokenDTO implements Partial<PlaidOnSuccessArgs> {
   @ApiProperty()
+  // @MaxLength(10)
   token!: string;
   @ApiProperty({ required: false })
   metadata?: PlaidSuccessMetadata;
