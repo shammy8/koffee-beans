@@ -1,13 +1,19 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { PlaidOnSuccessArgs, PlaidSuccessMetadata } from 'ngx-plaid-link';
 import { TokenResponse } from 'plaid';
 
-export class getAccessTokenDTO implements PlaidOnSuccessArgs {
+export class getAccessTokenDTO implements Partial<PlaidOnSuccessArgs> {
+  @ApiProperty()
   token!: string;
-  metadata!: PlaidSuccessMetadata;
+  @ApiProperty({ required: false })
+  metadata?: PlaidSuccessMetadata;
 }
 
-export class getTransactionsDTO implements TokenResponse {
+export class getTransactionsDTO implements Partial<TokenResponse> {
+  @ApiProperty()
   access_token!: string;
-  item_id!: string;
-  request_id!: string;
+  @ApiProperty({ required: false })
+  item_id?: string;
+  @ApiProperty({ required: false })
+  request_id?: string;
 }

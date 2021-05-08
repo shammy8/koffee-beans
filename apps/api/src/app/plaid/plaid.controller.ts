@@ -1,7 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { getAccessTokenDTO, getTransactionsDTO } from './plaid.dto';
 import { PlaidService } from './plaid.service';
 
+@ApiTags('Plaid')
 @Controller('plaid')
 export class PlaidController {
   constructor(private plaidService: PlaidService) {}
