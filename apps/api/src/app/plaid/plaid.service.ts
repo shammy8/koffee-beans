@@ -72,6 +72,14 @@ export class PlaidService {
       return err;
     }
   }
+
+  getBalance(body: getTransactionsDTO): Promise<plaid.AccountsResponse> {
+    try {
+      return this.client.getBalance(body.access_token);
+    } catch (err) {
+      return err;
+    }
+  }
 }
 
 // TODO need to check how to use this

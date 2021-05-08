@@ -23,4 +23,9 @@ export class PlaidController {
   getTransactions(@Body() body: getTransactionsDTO) {
     return this.plaidService.getTransactions(body);
   }
+
+  @Post('get_balance')
+  getBalance(@Body() body: getTransactionsDTO) {
+    return this.plaidService.getBalance(body);
+  }
 }

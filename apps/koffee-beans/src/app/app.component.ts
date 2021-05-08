@@ -7,6 +7,7 @@ import {
   PlaidOnSuccessArgs,
 } from 'ngx-plaid-link';
 import {
+  AccountsResponse,
   CreateLinkTokenResponse,
   TokenResponse,
   TransactionsAllResponse,
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
   linkToken$!: Observable<string>;
   linkToken = '';
   getTransactionsSub!: Subscription;
-  allTrans: TransactionsAllResponse | Record<string, never> = {};
+  allTrans: any;
 
   constructor(private http: HttpClient) {}
 
@@ -37,8 +38,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.getTransactionsSub = this.http
       .post<TokenResponse>('api/plaid/get_access_token', res)
       .pipe(
+        // concatMap((res) =>
+        //   this.http.post<TransactionsAllResponse>('api/plaid/transactions', res)
+        // )
         concatMap((res) =>
-          this.http.post<TransactionsAllResponse>('api/plaid/transactions', res)
+          this.http.post<AccountsResponse>('api/plaid/get_balance', res)
         )
       )
       .subscribe((res) => (this.allTrans = res));

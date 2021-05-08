@@ -12,7 +12,7 @@ import { PlaidModule } from './plaid/plaid.module';
     MongooseModule.forRoot(
       `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.0rnyh.mongodb.net/koffeeBeans?retryWrites=true&w=majority`
     ),
-    SpendingsModule,
+    // SpendingsModule,
     PlaidModule,
   ],
   controllers: [AppController],
