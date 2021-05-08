@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import {
   PlaidOnEventArgs,
   PlaidOnExitArgs,
@@ -11,7 +11,7 @@ import {
   TokenResponse,
   TransactionsAllResponse,
 } from 'plaid';
-import { concatMap } from 'rxjs/operators';
+import { concatMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'kb-root',
@@ -19,18 +19,16 @@ import { concatMap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  linkTokenSub!: Subscription;
+  linkToken$!: Observable<string>;
   linkToken = '';
   getTransactionsSub!: Subscription;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.linkTokenSub = this.http
+    this.linkToken$ = this.http
       .post<CreateLinkTokenResponse>('api/plaid/create_link_token', {})
-      .subscribe((res) => {
-        this.linkToken = res.link_token;
-      });
+      .pipe(map((res) => res.link_token));
   }
 
   onPlaidSuccess(res: PlaidOnSuccessArgs) {
@@ -63,7 +61,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.linkTokenSub?.unsubscribe();
     this.getTransactionsSub?.unsubscribe();
   }
 }

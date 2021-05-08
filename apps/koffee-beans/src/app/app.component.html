@@ -3,7 +3,7 @@
   <!-- ngxPlaidLink needs linkToken when instantiating 
   TODO get env and countryCodes from .env file? -->
   <button
-    *ngIf="linkToken"
+    *ngIf="linkToken$ | async as linkToken"
     tuiButton
     ngxPlaidLink
     env="sandbox"
@@ -17,5 +17,4 @@
   >
     Link your Bank Account
   </button>
-  {{ linkToken }}
 </tui-root>
