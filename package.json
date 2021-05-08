@@ -47,7 +47,7 @@
     "@taiga-ui/cdk": "^2.8.1",
     "@taiga-ui/core": "^2.8.1",
     "@taiga-ui/icons": "^2.8.1",
-    "@taiga-ui/kit": "^2.8.1",
+    "@taiga-ui/kit": "^2.8.2",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "ngx-plaid-link": "^1.0.3",
