@@ -1,4 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
+import { getAccessTokenDTO, getTransactionsDTO } from './plaid.dto';
 import { PlaidService } from './plaid.service';
 
 @Controller('plaid')
@@ -7,20 +8,17 @@ export class PlaidController {
 
   // TODO create interfaces
   @Post('create_link_token')
-  async createLinkToken() {
+  createLinkToken() {
     return this.plaidService.createLinkToken();
   }
 
   @Post('get_access_token')
-  async getAccessToken(
-    @Body('publicToken') publicToken: string
-    // @Body('metadata') metadata: any
-  ) {
-    return this.plaidService.getAccessToken(publicToken);
+  getAccessToken(@Body() body: getAccessTokenDTO) {
+    return this.plaidService.getAccessToken(body);
   }
 
   @Post('transactions')
-  async getTransactions(@Body('accessToken') accessToken: string) {
-    return this.plaidService.getTransactions(accessToken);
+  getTransactions(@Body() body: getTransactionsDTO) {
+    return this.plaidService.getTransactions(body);
   }
 }

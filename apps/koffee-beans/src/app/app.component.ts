@@ -6,6 +6,11 @@ import {
   PlaidOnExitArgs,
   PlaidOnSuccessArgs,
 } from 'ngx-plaid-link';
+import {
+  CreateLinkTokenResponse,
+  TokenResponse,
+  TransactionsAllResponse,
+} from 'plaid';
 import { concatMap } from 'rxjs/operators';
 
 @Component({
@@ -22,41 +27,39 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.linkTokenSub = this.http
-      .post<any>('api/plaid/create_link_token', {}) // TODO make interface
+      .post<CreateLinkTokenResponse>('api/plaid/create_link_token', {})
       .subscribe((res) => {
-        this.linkToken = res.linkToken;
+        this.linkToken = res.link_token;
       });
   }
 
   onPlaidSuccess(res: PlaidOnSuccessArgs) {
     console.log('success', res.token);
     this.getTransactionsSub = this.http
-      .post('api/plaid/get_access_token', { publicToken: res.token })
+      .post<TokenResponse>('api/plaid/get_access_token', res)
       .pipe(
-        concatMap((res: any) =>
-          this.http.post<any>('api/plaid/transactions', {
-            accessToken: res.access_token,
-          })
+        concatMap((res) =>
+          this.http.post<TransactionsAllResponse>('api/plaid/transactions', res)
         )
       )
       .subscribe(console.log);
   }
 
   onPlaidExit(res: PlaidOnExitArgs) {
-    console.log('exit', res);
+    // console.log('exit', res);
   }
 
   onPlaidLoad(res: string) {
     // res just says responds with link_loaded, use it to disable the button instead?
-    console.log('load', res);
+    // console.log('load', res);
   }
 
   onPlaidEvent(res: PlaidOnEventArgs) {
-    console.log('event', res);
+    // console.log('event', res);
   }
 
   onPlaidClick(res: MouseEvent) {
-    console.log('click', res);
+    // console.log('click', res);
   }
 
   ngOnDestroy() {
