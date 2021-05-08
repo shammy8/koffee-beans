@@ -22,6 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
   linkToken$!: Observable<string>;
   linkToken = '';
   getTransactionsSub!: Subscription;
+  allTrans: TransactionsAllResponse | Record<string, never> = {};
 
   constructor(private http: HttpClient) {}
 
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
           this.http.post<TransactionsAllResponse>('api/plaid/transactions', res)
         )
       )
-      .subscribe(console.log);
+      .subscribe((res) => (this.allTrans = res));
   }
 
   onPlaidExit(res: PlaidOnExitArgs) {
