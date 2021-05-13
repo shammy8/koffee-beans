@@ -11,7 +11,8 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(
-      `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.0rnyh.mongodb.net/koffeeBeans?retryWrites=true&w=majority`
+      `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.0rnyh.mongodb.net/koffeeBeans?retryWrites=true&w=majority`,
+      { useFindAndModify: false, useCreateIndex: true }
     ),
     AuthModule,
     PlaidModule,
