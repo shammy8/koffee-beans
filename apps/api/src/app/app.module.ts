@@ -13,9 +13,9 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(
       `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.0rnyh.mongodb.net/koffeeBeans?retryWrites=true&w=majority`
     ),
+    AuthModule,
     PlaidModule,
     UserModule,
-    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

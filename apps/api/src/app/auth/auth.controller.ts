@@ -1,4 +1,8 @@
-import { CreateUserDTO, LoginUserDTO } from '@koffee-beans/api-interfaces';
+import {
+  CreateUserDTO,
+  LoginUserDTO,
+  UserAccessToken,
+} from '@koffee-beans/api-interfaces';
 import {
   Body,
   Controller,
@@ -34,8 +38,8 @@ export class AuthController {
 
   // TODO for example only, probably delete this later or expand
   @ApiBearerAuth() // for swagger to allow you to add bearer
-  @Get('profile')
-  getProfile(@Request() req: any) {
+  @Get('user_profile')
+  getUserProfile(@Request() req: { user: UserAccessToken }) {
     return req.user;
   }
 }

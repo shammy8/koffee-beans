@@ -19,7 +19,7 @@ import { JwtAuthGuard } from './jwt-auth.guard';
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '120s' }, // TODO check this and change
+      signOptions: { expiresIn: '1d' }, // TODO check this and change
     }),
   ],
   exports: [AuthService, JwtModule],

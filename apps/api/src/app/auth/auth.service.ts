@@ -44,7 +44,6 @@ export class AuthService {
 
   // returns the JWT based on user id and user name
   async login(user: UserWithoutPassword) {
-    const payload = { sub: user._id, name: user.username };
-    return { access_token: this.jwtService.sign(payload) };
+    return { access_token: this.jwtService.sign(user) };
   }
 }

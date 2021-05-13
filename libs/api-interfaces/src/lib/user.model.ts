@@ -7,6 +7,11 @@ export interface UserWithoutPassword {
   email: string;
 }
 
+export interface UserAccessToken extends UserWithoutPassword {
+  iat: number;
+  exp: number;
+}
+
 export class CreateUserDTO {
   @ApiProperty()
   @IsNotEmpty()
