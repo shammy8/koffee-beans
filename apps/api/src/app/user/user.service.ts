@@ -34,7 +34,12 @@ export class UserService {
   ) {
     return this.userModel
       .findByIdAndUpdate(user._id, {
-        $push: { accessTokens: accessToken.access_token },
+        $push: {
+          accessTokens: {
+            accessToken: accessToken.access_token,
+            itemId: accessToken.item_id,
+          },
+        },
       })
       .exec();
   }
