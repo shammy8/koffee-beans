@@ -48,7 +48,6 @@
             "main": "apps/koffee-beans/src/main.ts",
             "polyfills": "apps/koffee-beans/src/polyfills.ts",
             "tsConfig": "apps/koffee-beans/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/koffee-beans/src/favicon.ico",
               "apps/koffee-beans/src/assets",
@@ -63,7 +62,13 @@
               "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
