@@ -32,7 +32,7 @@ export class PlaidService {
       // TODO check the options to createLinkToken
       return this.client.createLinkToken({
         user: {
-          client_user_id: 'todo put real user id',
+          client_user_id: 'todo put real user id', // TODO
         },
         client_name: 'Koffee Beans',
         products: ['auth', 'transactions'],
@@ -50,9 +50,20 @@ export class PlaidService {
     }
   }
 
-  getAccessToken(publicToken: getAccessTokenDTO): Promise<plaid.TokenResponse> {
+  sandboxCreatePublicToken() {
+    return this.client.sandboxPublicTokenCreate('ins_62', ['balance']);
+  }
+
+  async getAccessToken(
+    publicToken: getAccessTokenDTO
+  ): Promise<plaid.TokenResponse> {
     try {
-      return this.client.exchangePublicToken(publicToken.token);
+      if (publicToken.token) {
+        return this.client.exchangePublicToken(publicToken.token);
+      } else {
+        const sandboxPublicToken = await this.sandboxCreatePublicToken();
+        return this.client.exchangePublicToken(sandboxPublicToken.public_token);
+      }
     } catch (err) {
       return err;
     }

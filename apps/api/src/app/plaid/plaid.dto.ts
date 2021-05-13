@@ -4,7 +4,7 @@ import { TokenResponse } from 'plaid';
 // import { MaxLength } from 'class-validator';
 
 export class getAccessTokenDTO implements Partial<PlaidOnSuccessArgs> {
-  @ApiProperty()
+  @ApiProperty({ required: false }) // TODO required should be true in real mode
   // @MaxLength(10)
   token!: string;
   @ApiProperty({ required: false })
