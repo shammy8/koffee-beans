@@ -31,7 +31,6 @@ export class AuthService {
         user.password
       );
       if (isPasswordCorrect === true) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const userWithoutPassword: UserWithoutPassword = {
           username: user.username,
           email: user.email,
@@ -44,7 +43,7 @@ export class AuthService {
   }
 
   // returns the JWT based on user id and user name
-  async login(user: any) {
+  async login(user: UserWithoutPassword) {
     const payload = { sub: user._id, name: user.username };
     return { access_token: this.jwtService.sign(payload) };
   }
