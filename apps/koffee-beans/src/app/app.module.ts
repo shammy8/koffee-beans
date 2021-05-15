@@ -17,7 +17,7 @@ import { UiModule } from '@koffee-beans/ui';
     HttpClientModule,
     TuiRootModule,
     TuiSharedModule, // TODO remove this later
-    NgxPlaidLinkModule, // TODO remove this since it hasn't been updated to use link tokens
+    NgxPlaidLinkModule,
     UiModule,
     SpendingsModule,
   ],

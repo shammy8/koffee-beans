@@ -1,1 +1,19 @@
-<p>net-worth workss!</p>
+<tui-axes
+  class="axes"
+  [verticalLines]="labels.length"
+  [horizontalLines]="4"
+  [axisXLabels]="labels"
+  axisYName="Pounds"
+>
+  <tui-line-days-chart
+    class="chart"
+    [height]="200"
+    [value]="value"
+    [hintContent]="hint"
+  ></tui-line-days-chart>
+</tui-axes>
+
+<ng-template #hint let-data>
+  <p>Date: {{ data[0] }}</p>
+  <p>Value: {{ data[1] }}</p>
+</ng-template>
