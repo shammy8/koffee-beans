@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/koffee-beans',
     '<rootDir>/apps/api',
     '<rootDir>/libs/tui',
+    '<rootDir>/libs/ui',
   ],
 };

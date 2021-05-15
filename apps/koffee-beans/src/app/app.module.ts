@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPlaidLinkModule } from 'ngx-plaid-link';
 import { SpendingsModule } from './spendings/spendings.module';
 import { TuiSharedModule } from '@koffee-beans/tui';
+import { UiModule } from '@koffee-beans/ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { TuiSharedModule } from '@koffee-beans/tui';
     TuiRootModule,
     TuiSharedModule, // TODO remove this later
     NgxPlaidLinkModule, // TODO remove this since it hasn't been updated to use link tokens
+    UiModule,
     SpendingsModule,
   ],
   providers: [],

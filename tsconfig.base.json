@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@koffee-beans/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@koffee-beans/tui": ["libs/tui/src/index.ts"]
+      "@koffee-beans/tui": ["libs/tui/src/index.ts"],
+      "@koffee-beans/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
