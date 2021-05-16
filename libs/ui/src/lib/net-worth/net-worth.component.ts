@@ -11,10 +11,10 @@ export class NetWorthComponent implements OnInit {
     [new TuiDay(2020, 10, 1), 130],
     [new TuiDay(2020, 11, 1), 180],
     [new TuiDay(2021, 0, 1), 180],
-    [new TuiDay(2021, 1, 1), 100],
-    [new TuiDay(2021, 2, 1), 50],
-    [new TuiDay(2021, 3, 1), 6],
-    [new TuiDay(2021, 4, 1), 150],
+    [new TuiDay(2021, 1, 1), 200],
+    [new TuiDay(2021, 2, 1), 250],
+    [new TuiDay(2021, 3, 1), 160],
+    [new TuiDay(2021, 4, 1), 250],
     // [TuiDay.currentLocal(), 150],
   ] as readonly [TuiDay, number][];
 

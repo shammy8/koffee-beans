@@ -1,15 +1,17 @@
 <tui-axes
   class="axes"
   [verticalLines]="labels.length"
-  [horizontalLines]="4"
+  [horizontalLines]="3"
   [axisXLabels]="labels"
+  [axisYLabels]="['0', '300']"
   axisYName="Pounds"
 >
   <tui-line-days-chart
     class="chart"
-    [height]="200"
+    [height]="300"
     [value]="value"
     [hintContent]="hint"
+    [smoothingFactor]="100"
   ></tui-line-days-chart>
 </tui-axes>
 
