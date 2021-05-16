@@ -32,9 +32,6 @@
     "api-interfaces": {
       "tags": []
     },
-    "tui": {
-      "tags": []
-    },
     "ui": {
       "tags": []
     }

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { TuiRootModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiRootModule } from '@taiga-ui/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPlaidLinkModule } from 'ngx-plaid-link';
 import { SpendingsModule } from './spendings/spendings.module';
-import { TuiSharedModule } from '@koffee-beans/tui';
 import { UiModule } from '@koffee-beans/ui';
 
 @NgModule({
@@ -16,7 +15,7 @@ import { UiModule } from '@koffee-beans/ui';
     BrowserAnimationsModule,
     HttpClientModule,
     TuiRootModule,
-    TuiSharedModule, // TODO remove this later
+    TuiButtonModule,
     NgxPlaidLinkModule,
     UiModule,
     SpendingsModule,
