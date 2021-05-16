@@ -17,3 +17,13 @@
   <p>Date: {{ data[0] }}</p>
   <p>Value: {{ data[1] }}</p>
 </ng-template>
+
+<tui-axes class="axes" [axisYLabels]="['0', '35', '70']">
+  <tui-bar-chart
+    [value]="barChartValue"
+    [max]="70"
+    [size]="'l'"
+    [collapsed]="false"
+    [hintContent]="barChartHint"
+  ></tui-bar-chart>
+</tui-axes>

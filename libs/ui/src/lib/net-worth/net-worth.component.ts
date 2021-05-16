@@ -18,6 +18,13 @@ export class NetWorthComponent implements OnInit {
     // [TuiDay.currentLocal(), 150],
   ] as readonly [TuiDay, number][];
 
+  readonly barChartValue = [
+    [20, 10, 30],
+    [34, 54, 10],
+    [3, 2, 70],
+    [13, 28, 70],
+  ];
+
   readonly labels = [
     'Nov 2020',
     'Dec 2020',
@@ -27,6 +34,10 @@ export class NetWorthComponent implements OnInit {
     'Apr 2021',
     'May 2021',
   ];
+
+  barChartHint = ({ $implicit }: any) => {
+    return `${this.barChartValue[0][$implicit]}, ${this.barChartValue[1][$implicit]}, ${this.barChartValue[2][$implicit]}, ${this.barChartValue[3][$implicit]}`;
+  };
 
   ngOnInit(): void {
     return;
