@@ -5,19 +5,27 @@
   [axisXLabels]="labels"
   [axisYLabels]="['0', '300']"
   axisYName="Pounds"
+  [tuiLineChartHint]="hint"
 >
   <tui-line-days-chart
     class="chart"
     [height]="300"
     [value]="value"
-    [hintContent]="hint"
-    [smoothingFactor]="100"
+    [smoothingFactor]="50"
+  ></tui-line-days-chart>
+
+  <tui-line-days-chart
+    [height]="300"
+    [value]="value1"
+    [smoothingFactor]="50"
   ></tui-line-days-chart>
 </tui-axes>
 
 <ng-template #hint let-data>
-  <p>Date: {{ data[0] }}</p>
-  <p>Value: {{ data[1] }}</p>
+  <p>Date: {{ data[0][0] }}</p>
+  <p>Value: {{ data[0][1] }}</p>
+  <p>Date: {{ data[1][0] }}</p>
+  <p>Value: {{ data[1][1] }}</p>
 </ng-template>
 
 <tui-axes class="axes" [axisYLabels]="['0', '35', '70']">
