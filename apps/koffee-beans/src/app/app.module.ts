@@ -7,6 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPlaidLinkModule } from 'ngx-plaid-link';
 import { SpendingsModule } from './spendings/spendings.module';
 import { UiModule } from '@koffee-beans/ui';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('@koffee-beans/login').then((module) => module.LoginModule),
+  },
+];
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +28,7 @@ import { UiModule } from '@koffee-beans/ui';
     NgxPlaidLinkModule,
     UiModule,
     SpendingsModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],

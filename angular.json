@@ -247,6 +247,23 @@
           }
         }
       }
+    },
+    "login": {
+      "projectType": "library",
+      "root": "libs/login",
+      "sourceRoot": "libs/login/src",
+      "prefix": "kb",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/login/src/**/*.ts",
+              "libs/login/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
